@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -19,6 +20,10 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="window_shopper" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wZY-Xp-MNf"/>
+                        <viewControllerLayoutGuide type="bottom" id="gSh-wb-ioU"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,25 +38,46 @@
                                     <constraint firstAttribute="height" constant="60" id="qJu-v9-oEw"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your hourly wage" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k97-YI-7uD" customClass="CurrencyTxtField" customModule="window_shopper" customModuleProvider="target">
-                                <rect key="frame" x="65" y="152" width="245" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your hourly wage" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k97-YI-7uD" customClass="CurrencyTxtField" customModule="window_shopper" customModuleProvider="target">
+                                <rect key="frame" x="36" y="150" width="303" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="LA0-jg-mrw"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Item price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="97U-GD-NU8" customClass="CurrencyTxtField" customModule="window_shopper" customModuleProvider="target">
+                                <rect key="frame" x="36" y="215" width="303" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="OBP-dT-zfK"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="xx1-QT-yPh" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8kk-jb-sBa"/>
+                            <constraint firstItem="k97-YI-7uD" firstAttribute="trailing" secondItem="97U-GD-NU8" secondAttribute="trailing" id="1T7-sb-L6H"/>
+                            <constraint firstItem="k97-YI-7uD" firstAttribute="leading" secondItem="97U-GD-NU8" secondAttribute="leading" id="1nn-6g-tYq"/>
+                            <constraint firstItem="97U-GD-NU8" firstAttribute="top" secondItem="k97-YI-7uD" secondAttribute="bottom" constant="25" id="5JH-hO-4Xj"/>
+                            <constraint firstItem="xx1-QT-yPh" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="8kk-jb-sBa"/>
+                            <constraint firstItem="k97-YI-7uD" firstAttribute="height" secondItem="97U-GD-NU8" secondAttribute="height" id="Nat-U3-A3w"/>
                             <constraint firstItem="xx1-QT-yPh" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="PzW-XZ-9Wq"/>
                             <constraint firstItem="4pY-TX-aoo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XBc-b8-w1d"/>
-                            <constraint firstItem="4pY-TX-aoo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="35" id="ZuV-C1-qiR"/>
-                            <constraint firstItem="xx1-QT-yPh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bSG-0y-rwK"/>
-                            <constraint firstItem="xx1-QT-yPh" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="oKZ-bY-PvW"/>
+                            <constraint firstItem="4pY-TX-aoo" firstAttribute="top" secondItem="wZY-Xp-MNf" secondAttribute="bottom" constant="35" id="ZuV-C1-qiR"/>
+                            <constraint firstItem="k97-YI-7uD" firstAttribute="top" secondItem="4pY-TX-aoo" secondAttribute="bottom" constant="35" id="ao0-Os-PS2"/>
+                            <constraint firstItem="xx1-QT-yPh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bSG-0y-rwK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="k97-YI-7uD" secondAttribute="trailing" constant="20" id="d5t-ux-31I"/>
+                            <constraint firstItem="xx1-QT-yPh" firstAttribute="bottom" secondItem="gSh-wb-ioU" secondAttribute="top" id="oKZ-bY-PvW"/>
+                            <constraint firstItem="k97-YI-7uD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="xHZ-2j-pWn"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="priceTxt" destination="97U-GD-NU8" id="SSr-MW-ZbO"/>
+                        <outlet property="wageTxt" destination="k97-YI-7uD" id="s5l-tD-thx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
