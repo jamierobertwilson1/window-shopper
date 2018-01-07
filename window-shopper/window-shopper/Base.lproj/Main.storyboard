@@ -56,6 +56,28 @@
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="32" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LNb-mM-384">
+                                <rect key="frame" x="35.5" y="300" width="303" height="71.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="52"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oes-nV-rEm">
+                                <rect key="frame" x="164.5" y="376.5" width="46.5" height="23.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P6j-Xq-Nwp">
+                                <rect key="frame" x="36" y="609" width="303" height="38"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="19"/>
+                                <state key="normal" title="Clear Calculator">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clearCalculatorPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Ip-Z1-kau"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -63,19 +85,29 @@
                             <constraint firstItem="k97-YI-7uD" firstAttribute="leading" secondItem="97U-GD-NU8" secondAttribute="leading" id="1nn-6g-tYq"/>
                             <constraint firstItem="97U-GD-NU8" firstAttribute="top" secondItem="k97-YI-7uD" secondAttribute="bottom" constant="25" id="5JH-hO-4Xj"/>
                             <constraint firstItem="xx1-QT-yPh" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="8kk-jb-sBa"/>
+                            <constraint firstItem="LNb-mM-384" firstAttribute="width" secondItem="97U-GD-NU8" secondAttribute="width" id="GVb-zg-BRr"/>
+                            <constraint firstItem="Oes-nV-rEm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MHn-ti-niq"/>
                             <constraint firstItem="k97-YI-7uD" firstAttribute="height" secondItem="97U-GD-NU8" secondAttribute="height" id="Nat-U3-A3w"/>
+                            <constraint firstItem="Oes-nV-rEm" firstAttribute="top" secondItem="LNb-mM-384" secondAttribute="bottom" constant="5" id="OPD-YB-IFB"/>
                             <constraint firstItem="xx1-QT-yPh" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="PzW-XZ-9Wq"/>
                             <constraint firstItem="4pY-TX-aoo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XBc-b8-w1d"/>
                             <constraint firstItem="4pY-TX-aoo" firstAttribute="top" secondItem="wZY-Xp-MNf" secondAttribute="bottom" constant="35" id="ZuV-C1-qiR"/>
                             <constraint firstItem="k97-YI-7uD" firstAttribute="top" secondItem="4pY-TX-aoo" secondAttribute="bottom" constant="35" id="ao0-Os-PS2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="P6j-Xq-Nwp" secondAttribute="trailing" constant="20" id="azL-ZF-gQy"/>
                             <constraint firstItem="xx1-QT-yPh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bSG-0y-rwK"/>
+                            <constraint firstItem="LNb-mM-384" firstAttribute="top" secondItem="97U-GD-NU8" secondAttribute="bottom" constant="45" id="cK2-Js-rOK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="k97-YI-7uD" secondAttribute="trailing" constant="20" id="d5t-ux-31I"/>
+                            <constraint firstItem="LNb-mM-384" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kE7-g6-Pba"/>
                             <constraint firstItem="xx1-QT-yPh" firstAttribute="bottom" secondItem="gSh-wb-ioU" secondAttribute="top" id="oKZ-bY-PvW"/>
+                            <constraint firstItem="P6j-Xq-Nwp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="oKr-mg-To7"/>
+                            <constraint firstItem="gSh-wb-ioU" firstAttribute="top" secondItem="P6j-Xq-Nwp" secondAttribute="bottom" constant="20" id="owp-PE-b3Z"/>
                             <constraint firstItem="k97-YI-7uD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="xHZ-2j-pWn"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="hoursLbl" destination="Oes-nV-rEm" id="2Me-Mb-r67"/>
                         <outlet property="priceTxt" destination="97U-GD-NU8" id="SSr-MW-ZbO"/>
+                        <outlet property="resultLbl" destination="LNb-mM-384" id="jYF-p9-Vlk"/>
                         <outlet property="wageTxt" destination="k97-YI-7uD" id="s5l-tD-thx"/>
                     </connections>
                 </viewController>
